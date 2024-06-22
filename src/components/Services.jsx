@@ -24,18 +24,18 @@ const Services = () => {
             opacity: 0,
             x: "100%",
         },
-        fiveAndSix: {
-            opacity: 0,
-            x: "-100%",
-        },
-        seven: {
-            opacity: 0,
-            y: "-100%",
-        },
-        eight: {
-            opacity: 0,
-            x: "100%",
-        },
+        // fiveAndSix: {
+        //     opacity: 0,
+        //     x: "-100%",
+        // },
+        // seven: {
+        //     opacity: 0,
+        //     y: "-100%",
+        // },
+        // eight: {
+        //     opacity: 0,
+        //     x: "100%",
+        // },
     } 
 
   return <div id="services">
@@ -57,7 +57,8 @@ const Services = () => {
                 <FaPhp />
                 <span>PHP</span>
             </motion.div>
-            <motion.div className="serviceBox5" whileInView={animations.whileInView} initial={animations.fiveAndSix}>
+            
+            {/* <motion.div className="serviceBox5" whileInView={animations.whileInView} initial={animations.fiveAndSix}>
                 <AiOutlineJavaScript />
                 <span>JavaScript</span>
             </motion.div>
@@ -72,7 +73,7 @@ const Services = () => {
             <motion.div className="serviceBox8" whileInView={animations.whileInView} initial={animations.eight}>
                 <FaReact />
                 <span>ReactJs</span>
-            </motion.div>
+            </motion.div> */}
         </section>
     </div>
 }
