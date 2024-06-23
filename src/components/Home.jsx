@@ -2,21 +2,21 @@ import {React, useRef } from 'react';
 import {animate, motion} from "framer-motion";
 import Typewriter from 'typewriter-effect';
 import {BsArrowUpRight, BsChevronDown} from "react-icons/bs";
-import me from "../assets/logo2.png";
+import me from "../assets/logo.png";
 const Home = ({ ratio }) => {
 
     const clientCount = useRef(null);
     const projectCount = useRef(null);
 
     const animationClientsCount = () =>{
-        animate(0,100, {
+        animate(0,10, {
             duration:1,
             onUpdate:(v)=> (clientCount.current.textContent = v.toFixed())
         })
     }
 
     const animationProjectsCount = () =>{
-        animate(0,500, {
+        animate(0,50, {
             duration:1,
             onUpdate:(v)=> (projectCount.current.textContent = v.toFixed())
         })
@@ -72,7 +72,7 @@ const Home = ({ ratio }) => {
             <article>
                 <p>
                     +
-                    { ratio < 3 && (<motion.span whileInView={animationClientsCount} ref={clientCount}>100</motion.span>) }
+                    { ratio < 3 && (<motion.span whileInView={animationClientsCount} ref={clientCount}>10</motion.span>) }
                 </p>
                 <span>Clients Worldwide</span>
             </article>
@@ -81,7 +81,7 @@ const Home = ({ ratio }) => {
                 <article>
                     <p>
                         +
-                        { ratio < 3 && (<motion.span whileInView={animationProjectsCount} ref={projectCount}>500</motion.span>) }
+                        { ratio < 3 && (<motion.span whileInView={animationProjectsCount} ref={projectCount}>50</motion.span>) }
                     </p>
                     <span>Projects Done</span>
                 </article>
