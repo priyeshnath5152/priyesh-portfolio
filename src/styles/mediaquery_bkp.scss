@@ -312,11 +312,9 @@
 
     #services{
         > section {
-            overflow-y: scroll;
-            line-height: normal;
-            margin: 1rem 0;
+            margin: 3rem 0;
             grid-template-columns: repeat(2,1fr);
-            gap: 0.5rem;
+            gap: 1rem;
             .serviceBox1{
                 grid-column: 1/3;
                 grid-row: unset;
