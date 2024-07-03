@@ -3,6 +3,7 @@ import {animate, motion} from "framer-motion";
 import Typewriter from 'typewriter-effect';
 import {BsArrowUpRight, BsChevronDown} from "react-icons/bs";
 import me from "../assets/logo.png";
+import downloadResume from "../assets/PriyeshNathTiwariResume.pdf";
 const Home = ({ ratio }) => {
 
     const clientCount = useRef(null);
@@ -61,8 +62,8 @@ const Home = ({ ratio }) => {
             }}/>
 
             <div>
-                <a href="mailto:priyesht5152@gmail.com">
-                    Hire Me
+                <a href={downloadResume} download>
+                    Download Resume
                 </a>
                 <a href="#work">
                     Projects <BsArrowUpRight />

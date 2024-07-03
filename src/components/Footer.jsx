@@ -8,7 +8,7 @@ const Footer = () => {
             <img src={avatars} alt="Founder" />
 
             <h2>Priyesh Tiwari</h2>
-            <p>Motivation is temporary, but discipline last forever.</p>
+            <p>Build the Network, Network Builds You.</p>
         </div>
         <aside>
             <h2></h2>
