@@ -7,7 +7,7 @@ const Footer = () => {
         <div>
             <img src={avatars} alt="Founder" />
 
-            <h2>Priyesh Tiwari</h2>
+            <h2>Priyesh Nath Tiwari</h2>
             <p>Build the Network, Network Builds You.</p>
         </div>
         <aside>
