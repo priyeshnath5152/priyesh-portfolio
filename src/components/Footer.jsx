@@ -14,7 +14,7 @@ const Footer = () => {
             <h2></h2>
             <article>
                 <a href="https://www.youtube.com/@webtecho681" target='blank'>
-                    <AiFillYoutube />
+                    <AiFillYoutube/>
                 </a>
                 <a href="https://www.linkedin.com/in/priyesh-tiwari-2902781b1/" target='blank'>
                     <AiFillLinkedin/>

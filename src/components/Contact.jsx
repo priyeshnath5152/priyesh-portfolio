@@ -7,7 +7,7 @@ import {db} from "../firebase";
 
 const Contact = () => {
     const [name,setName]  =useState("");
-    const [email,setEmail]  =useState("");
+    const [contact,setContact]  =useState("");
     const [message,setMessage]  =useState("");
     const [disableBtn,setDisableBtn] =useState(false);
 
@@ -15,14 +15,14 @@ const Contact = () => {
         e.preventDefault();
         setDisableBtn(true);
         try {
-            // console.log(name,email,message);
+            // console.log(name,contact,message);
             await addDoc(collection(db,"contacts"),{
                 name,
-                email,
+                contact,
                 message,
             });
             setName("")
-            setEmail("")
+            setContact("")
             setMessage("")
             
             toast.success("Message Sent");
@@ -67,7 +67,7 @@ const Contact = () => {
         <motion.form onSubmit={submitHandler} {...animations.form}>
             <h2>Contact Me</h2>
             <input type='text' value={name} onChange={(e) => setName(e.target.value)} placeholder='Your Name' required />
-            <input type='eamil' value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Your Eamil' required />
+            <input type='contact' value={contact} onChange={(e) => setContact(e.target.value)} placeholder='Your Contact' required />
             <input type='text' value={message} onChange={(e) => setMessage(e.target.value)} placeholder='Your Message' required />
             <motion.button {...animations.button} className={disableBtn ? "disableBtn" : ""} disabled={disableBtn} type='submit'>Send</motion.button>
         </motion.form>
