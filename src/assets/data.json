@@ -5,9 +5,8 @@
       "title": "Indian Gold",
       "description": "The platform supports market orders, limit orders, and stop-loss orders, service charges, giving users flexibility in executing trades.",
       "url": " https://indiansgold.com",
-      "imgSrc": "https://indiansgold.com/img/footer_logo.png"
+      "imgSrc": "/Images/Indiangold.png"
     },
-    
     {
       "date": "11/10/2023",
       "title": "Vivaacp",
@@ -20,7 +19,7 @@
       "title": "TVS Insurance",
       "description": "Insurance platform designed to streamline policy management, claims processing, and customer interactions, Integrated secure payment gateways and many more.",
       "url": "https://www.mybizznow.com/tvs/",
-      "imgSrc": "https://portal.tradebrains.in/_next/image?url=https%3A%2F%2Ftradebrains-portal.s3.ap-south-1.amazonaws.com%2FNIFTY50%2FTVSMOTOR.png&w=384&q=75"
+      "imgSrc": "/Images/TVS-IMG.jpg"
     },
     {
       "date": "01/01/2022",
@@ -41,7 +40,7 @@
       "title": "PORTFOLIO",
       "description": "A portfolio is a compilation of academic and professional materials that exemplifies your beliefs, skills, qualifications, education, training, and experiences.",
       "url": "/",
-      "imgSrc": "https://priyesh-portfolio.vercel.app/static/media/logo.68b731301974c2160d99.png"
+      "imgSrc": "https://priyesh-portfolio.onrender.com/static/media/logo.68b731301974c2160d99.png"
     }
   ]
 
