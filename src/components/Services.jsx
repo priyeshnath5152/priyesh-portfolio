@@ -1,7 +1,7 @@
 import React from 'react';
 import {motion} from "framer-motion";
 import { AiFillIeCircle, AiOutlineJavaScript } from "react-icons/ai";
-import { FaLaravel, FaPhp, FaReact } from "react-icons/fa";
+import { FaAws, FaLaravel, FaPhp, FaPython, FaReact } from "react-icons/fa";
 import { SiJquery, SiMysql } from "react-icons/si";
 
 const Services = () => {
@@ -36,13 +36,21 @@ const Services = () => {
             opacity: 0,
             x: "100%",
         },
+        nine: {
+            opacity: 0,
+            x: "100%",
+        },
+        ten: {
+            opacity: 0,
+            x: "100%",
+        },
     } 
 
   return <div id="services">
     <h2>Skills</h2>
         <section>
             <motion.div className="serviceBox1" whileInView={animations.whileInView} initial={animations.one}>
-                <h3>2.5+</h3>
+                <h3>4+</h3>
                 <p>Years Experience</p>
             </motion.div>
             <motion.div className="serviceBox2" whileInView={animations.whileInView} initial={animations.twoAndThree}>
@@ -72,6 +80,14 @@ const Services = () => {
             <motion.div className="serviceBox8" whileInView={animations.whileInView} initial={animations.eight}>
                 <FaReact />
                 <span>ReactJs</span>
+            </motion.div>
+            <motion.div className="serviceBox9" whileInView={animations.whileInView} initial={animations.nine}>
+                <FaPython />
+                <span>Python</span>
+            </motion.div>
+            <motion.div className="serviceBox10" whileInView={animations.whileInView} initial={animations.ten}>
+                <FaAws />
+                <span>AWS</span>
             </motion.div>
         </section>
     </div>

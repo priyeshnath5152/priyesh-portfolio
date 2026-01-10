@@ -13,7 +13,7 @@ const Footer = () => {
         <aside>
             <h2></h2>
             <article>
-                <a href="https://www.youtube.com/@webtecho681" target='blank'>
+                <a href="https://youtube.com/@webtechoorg?si=oyuroWwyKYAtYNOL" target='blank'>
                     <AiFillYoutube/>
                 </a>
                 <a href="https://www.linkedin.com/in/priyesh-tiwari-2902781b1/" target='blank'>

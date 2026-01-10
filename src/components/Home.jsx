@@ -3,7 +3,7 @@ import {animate, motion} from "framer-motion";
 import Typewriter from 'typewriter-effect';
 import {BsArrowUpRight, BsChevronDown} from "react-icons/bs";
 import me from "../assets/logo.png";
-import downloadResume from "../assets/PriyeshNathTiwariResume.pdf";
+import downloadResume from "../assets/PriyeshNathTiwari.pdf";
 const Home = ({ ratio }) => {
 
     const clientCount = useRef(null);
