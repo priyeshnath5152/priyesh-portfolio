@@ -6,18 +6,18 @@ import me from "../assets/logo.png";
 import downloadResume from "../assets/PriyeshNathTiwari.pdf";
 const Home = ({ ratio }) => {
 
-    const clientCount = useRef(null);
+    const leetcodeCount = useRef(null);
     const projectCount = useRef(null);
 
     const animationClientsCount = () =>{
-        animate(0,10, {
+        animate(0,30, {
             duration:1,
-            onUpdate:(v)=> (clientCount.current.textContent = v.toFixed())
+            onUpdate:(v)=> (leetcodeCount.current.textContent = v.toFixed())
         })
     }
 
     const animationProjectsCount = () =>{
-        animate(0,50, {
+        animate(0,10, {
             duration:1,
             onUpdate:(v)=> (projectCount.current.textContent = v.toFixed())
         })
@@ -73,7 +73,7 @@ const Home = ({ ratio }) => {
             <article>
                 <p>
                     +
-                    { ratio < 3 && (<motion.span whileInView={animationClientsCount} ref={clientCount}>30</motion.span>) }
+                    { ratio < 3 && (<motion.span whileInView={animationClientsCount} ref={leetcodeCount}>30</motion.span>) }
                 </p>
                 <span>Leetcode Problems</span>
             </article>
