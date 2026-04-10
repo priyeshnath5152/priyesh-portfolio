@@ -1,7 +1,7 @@
 import React from 'react';
 import {motion} from "framer-motion";
 import { AiFillIeCircle, AiOutlineJavaScript } from "react-icons/ai";
-import { FaAws, FaLaravel, FaPhp, FaPython, FaReact } from "react-icons/fa";
+import { FaAws, FaLaravel, FaPhp, FaNodeJs, FaReact } from "react-icons/fa";
 import { SiJquery, SiMysql } from "react-icons/si";
 
 const Services = () => {
@@ -82,8 +82,8 @@ const Services = () => {
                 <span>ReactJs</span>
             </motion.div>
             <motion.div className="serviceBox9" whileInView={animations.whileInView} initial={animations.nine}>
-                <FaPython />
-                <span>Python</span>
+                <FaNodeJs />
+                <span>NodeJs</span>
             </motion.div>
             <motion.div className="serviceBox10" whileInView={animations.whileInView} initial={animations.ten}>
                 <FaAws />
