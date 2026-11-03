@@ -1,54 +1,97 @@
-#testimonial {
-    width: 100%;
-    padding: $p;
-    background-color: $color4;
-    color: $color5;
-
-    > h2 {
-        font: 700 2.5rem $text2;
-        text-align: center;
-        margin-bottom: 3rem;
+.testimonials {
+    &__grid {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr 1fr;
+        gap: clamp(12px, 1.5vw, 20px);
+        align-items: stretch;
     }
 
-    > section {
+    @include md {
+        &__grid {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .quote--feature {
+            grid-column: 1 / -1;
+        }
+    }
+
+    @include sm {
+        &__grid {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+.quote {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2.5rem;
+    min-height: clamp(260px, 24vw, 360px);
+    padding: clamp(22px, 2.5vw, 40px);
+    border-radius: $radius;
+    border: 1px solid $line;
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+    overflow: hidden;
+    transition: border-color 0.5s $ease;
+
+    &__mark {
+        position: absolute;
+        right: clamp(16px, 2vw, 32px);
+        top: -0.12em;
+        font: 400 clamp(7rem, 10vw, 12rem)/1 $serif;
+        color: rgba(255, 107, 61, 0.25);
+        pointer-events: none;
+    }
+
+    blockquote {
+        position: relative;
+        font: 400 italic clamp(1.4rem, 1rem + 1.1vw, 2.1rem)/1.2 $serif;
+        letter-spacing: -0.01em;
+    }
+
+    &--feature {
+        background:
+            radial-gradient(90% 80% at 0% 100%, rgba(255, 107, 61, 0.2), transparent 60%),
+            linear-gradient(160deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
+
+        blockquote {
+            font-size: clamp(1.6rem, 1.1rem + 1.6vw, 2.7rem);
+        }
+    }
+
+    figcaption {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        width: 80%;
-        margin: auto;
-        height: 40rem;
-        padding: 8rem;
-        background-color:  $color1;
-        gap: 20px;
+        align-items: center;
+        gap: 0.9rem;
 
-        > article {
-            height: 100%;
-            width: 30%;
-            background-color: $color4;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-            position: relative;
-            img {
-                top: 0%;
-                position: absolute;
-                width: 100px;
-                height: 100px;
-                object-fit: contain;
-                border-radius: 50%;
-                transform: translateY(-50%);
-            }
+        img {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: $surface-2;
+            border: 1px solid $line-2;
+        }
 
-            p {
-                letter-spacing: 2px;
-                margin: 20px 0;
-                font-size: 0.7rem;
-                line-height: 160%;
-                text-align: center;
-                overflow: hidden;
-            }
+        strong {
+            display: block;
+            font: 700 1rem/1.2 $display;
+            letter-spacing: -0.01em;
+        }
+
+        span,
+        a {
+            font-size: 0.85rem;
+            color: $muted;
+            font-weight: 500;
+        }
+    }
+
+    @include fine {
+        &:hover {
+            border-color: $line-2;
         }
     }
 }

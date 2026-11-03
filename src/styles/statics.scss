@@ -1,22 +1,36 @@
-$text1:"Roboto", sans-serif;
-$text2:"Open Sans", sans-serif;
+// ─── Typography ────────────────────────────────────────────
+$display: "Syne", "Manrope", system-ui, sans-serif;
+$body: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+$serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+$mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
 
-$color1:#fef2f2;
-$color2:#286f6c;
-$color2_1:#174340;
-$color3:#f26440;
-$color3_light:rgb(249, 141, 141);
-$color3_1:#ad4126;
-$color4:#fff;
-$color5:#292b46;
-$color6:#161616;
-$color6_1:#16161698;
-$color6_2:#16161622;
+// ─── Colour ────────────────────────────────────────────────
+$bg: #07070a;
+$bg-2: #0b0b0f;
+$surface: #111116;
+$surface-2: #17171e;
+$text: #efebe4;
+$muted: #9a968f;
+$dim: #5f5d63;
+$line: rgba(255, 255, 255, 0.08);
+$line-2: rgba(255, 255, 255, 0.15);
+$accent: #ff6b3d;
+$accent-soft: #ff9b6e;
+$gold: #e9c99b;
 
-$p: 13.33vmax;
-$p_md: 7vmax;
-$p_base: 5vmax;
-$p_base_inverse: 15vmax 10vmax;
-$p_sm: 2vmax;
-$p_sm_inverse: 13vmax 0;
-$p_zero: 0;
+// ─── Motion & rhythm ───────────────────────────────────────
+$ease: cubic-bezier(0.22, 1, 0.36, 1);
+$ease-io: cubic-bezier(0.76, 0, 0.24, 1);
+
+$gutter: clamp(16px, 4vw, 64px);
+$section-y: clamp(88px, 12vw, 180px);
+$radius: clamp(16px, 1.8vw, 28px);
+
+// ─── Breakpoints ───────────────────────────────────────────
+// xs: 320–480 · sm: 481–767 · md: 768–1024 · lg: 1025–1440 · xl: 1441+
+@mixin xs { @media (max-width: 480px) { @content; } }
+@mixin sm { @media (max-width: 767px) { @content; } }
+@mixin md { @media (max-width: 1024px) { @content; } }
+@mixin lg { @media (max-width: 1440px) { @content; } }
+@mixin xl { @media (min-width: 1441px) { @content; } }
+@mixin fine { @media (hover: hover) and (pointer: fine) { @content; } }

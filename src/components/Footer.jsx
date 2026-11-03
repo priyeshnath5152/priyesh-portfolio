@@ -1,32 +1,57 @@
-import React from 'react'
-import { AiFillInstagram, AiFillLinkedin, AiFillYoutube, AiOutlineArrowUp } from 'react-icons/ai'
-import avatars from "../assets/IMG_4513.JPG";
-const Footer = () => {
-  return (
-    <footer>
-        <div>
-            <img src={avatars} alt="Founder" />
+import React from "react";
+import { AiFillGithub, AiFillInstagram, AiFillLinkedin, AiFillYoutube, AiOutlineArrowUp } from "react-icons/ai";
+import avatar from "../assets/hero-portrait.png";
+import profile from "../assets/profile.json";
+import { links } from "./Header";
+import { Magnetic } from "./Motion";
 
-            <h2>Priyesh Nath Tiwari</h2>
-            <p>Build the Network, Network Builds You.</p>
+const icons = { LinkedIn: AiFillLinkedin, GitHub: AiFillGithub, YouTube: AiFillYoutube, Instagram: AiFillInstagram };
+
+const Footer = () => (
+  <footer className="footer">
+    <div className="container">
+      <div className="footer__top">
+        <div className="footer__id">
+          <img src={avatar} alt="Founder" loading="lazy" />
+          <div>
+            <h2>{profile.name}</h2>
+            <p className="serif">{profile.tagline}</p>
+          </div>
         </div>
-        <aside>
-            <h2></h2>
-            <article>
-                <a href="https://youtube.com/@webtechoorg?si=oyuroWwyKYAtYNOL" target='blank'>
-                    <AiFillYoutube/>
-                </a>
-                <a href="https://www.linkedin.com/in/priyesh-tiwari-2902781b1/" target='blank'>
-                    <AiFillLinkedin/>
-                </a>
-                <a href="https://instagram.com/withpriyesh/" target='blank'>
-                    <AiFillInstagram/>
-                </a>
-            </article>
-        </aside>
-        <a href="#home"><AiOutlineArrowUp /></a>
-    </footer>
-  )
-}
 
-export default Footer
+        <nav className="footer__nav" aria-label="Footer">
+          {links.map((l) => (
+            <a key={l.id} href={`#${l.id}`} className="link-underline">
+              {l.label}
+            </a>
+          ))}
+        </nav>
+
+        <div className="footer__socials">
+          {profile.socials.map((s) => {
+            const Icon = icons[s.name];
+            return (
+              <Magnetic key={s.name} href={s.url} target="_blank" rel="noreferrer" aria-label={s.name} strength={0.4}>
+                <Icon />
+              </Magnetic>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="footer__word" aria-hidden="true">
+        Priyesh
+      </div>
+
+      <div className="footer__bottom mono">
+        <span>© {new Date().getFullYear()} {profile.name}</span>
+        <span>Designed & built in Mumbai</span>
+        <a href="#home" className="footer__top-btn" aria-label="Back to top">
+          Back to top <AiOutlineArrowUp />
+        </a>
+      </div>
+    </div>
+  </footer>
+);
+
+export default Footer;

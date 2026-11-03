@@ -1,6 +1,22 @@
 {
   "projects": [
     {
+      "date": "",
+      "title": "Atomicsure RSA",
+      "description": "Roadside assistance (RSA) policy platform by Atomicsure — an assist-desk portal for managing RSA policies and support workflows.",
+      "url": "https://assistdesk.atomicsure.com/login",
+      "imgSrc": "/Images/atomicsure-rsa.svg",
+      "logo": true
+    },
+    {
+      "date": "06/07/202",
+      "title": "StreamOn hub",
+      "description": "StreamOnHub is a platform designed for pharmaceutical companies to seamlessly organize and manage their events.",
+      "url": "https://www.streamontech.com/",
+      "imgSrc": "/Images/streamon-logo.png",
+      "logo": true
+    },
+    {
       "date": "06/07/2023",
       "title": "Indian Gold",
       "description": "The platform supports market orders, limit orders, and stop-loss orders, service charges, giving users flexibility in executing trades.",
@@ -11,8 +27,9 @@
       "date": "11/10/2023",
       "title": "Vivaacp",
       "description": "Entire site is dynamic like cms, crafting fully customizable and dynamic websites using Laravel, seo-friendly architecture and optimization in multiple languages.",
-      "url": "https://react-video-app-eight.vercel.app",
-      "imgSrc": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa6DpbREEc5kayu9fKK8Ylx_iam_4DZNjK1w&s"
+      "url": "https://vivaacp.com/",
+      "imgSrc": "/Images/vivaacp-logo.gif",
+      "logo": true
     },
     {
       "date": "01/08/2022",
@@ -22,11 +39,12 @@
       "imgSrc": "/Images/TVS-IMG.jpg"
     },
     {
-      "date": "01/01/2022",
-      "title": "MLM",
-      "description": "Architected and developed a comprehensive MLM level plan platform, encompassing features such as multi-tiered commission structures, genealogy tracking, and performance analytics.",
-      "url": "#",
-      "imgSrc": "https://static.vecteezy.com/system/resources/previews/009/130/340/original/mlm-logo-mlm-letter-mlm-letter-logo-design-initials-mlm-logo-linked-with-circle-and-uppercase-monogram-logo-mlm-typography-for-technology-business-and-real-estate-brand-vector.jpg"
+      "date": "",
+      "title": "MyPolicyNow",
+      "description": "Simplified insurance for smart people — an online insurance platform for comparing, buying and managing policies.",
+      "url": "https://demo.mypolicynow.com/login",
+      "imgSrc": "/Images/mpn-logo.png",
+      "logo": true
     },
     {
       "date": "15/10/2023",

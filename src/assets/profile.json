@@ -1,0 +1,110 @@
+{
+  "name": "Priyesh Nath Tiwari",
+  "email": "priyesht5152@gmail.com",
+  "whatsapp": "917219321131",
+  "whatsappDisplay": "+91 72193 21131",
+  "location": "Mumbai, India",
+  "tagline": "Build the Network, Network Builds You.",
+  "summary": "I'm a backend-focused full-stack developer with 4+ years of experience building scalable web applications, RESTful APIs and real-time systems — across live streaming, online trading and insurance CRM products.",
+  "intro": "Day to day I work in Node.js, React.js, PHP/Laravel, PostgreSQL and MySQL on AWS and Docker — with hands-on experience in backend architecture, database design, payment gateway integration and performance optimisation.",
+  "languages": ["English", "Hindi", "Marathi"],
+  "hobbies": ["Chess", "Sudoku"],
+  "socials": [
+    { "name": "LinkedIn", "url": "https://www.linkedin.com/in/priyesh-tiwari-2902781b1/" },
+    { "name": "GitHub", "url": "https://github.com/priyeshnath5152" },
+    { "name": "YouTube", "url": "https://youtube.com/@webtechoorg?si=oyuroWwyKYAtYNOL" },
+    { "name": "Instagram", "url": "https://instagram.com/withpriyesh/" }
+  ],
+  "skillGroups": [
+    { "title": "Languages", "items": ["JavaScript", "PHP", "SQL"] },
+    { "title": "Backend", "items": ["Node.js", "Express.js", "Laravel", "RESTful APIs", "JWT auth", "Kafka", "System Design", "MVC architecture"] },
+    { "title": "Frontend", "items": ["React.js", "jQuery", "Ajax", "Bootstrap", "CSS"] },
+    { "title": "Databases & Caching", "items": ["PostgreSQL", "MySQL", "Redis"] },
+    { "title": "Cloud & Tools", "items": ["AWS Lambda", "EC2", "S3", "Docker", "Git", "Agora SDK", "Razorpay", "Stripe"] }
+  ],
+  "experience": [
+    {
+      "role": "Software Developer",
+      "company": "Atomicsure Infotech Pvt Ltd",
+      "location": "Mumbai",
+      "period": "Aug 2026 — Present",
+      "current": true,
+      "points": [
+        "Building Renova AI, an insurance renewal CRM for life, health and vehicle policies — React.js front end, Node.js REST APIs and a PostgreSQL data model for customers, policies and renewal tracking.",
+        "Authored page-level business requirement documents, translating each screen and workflow into API contracts, validation rules and database schema before development, using Claude AI as an analysis and drafting aid.",
+        "Designed renewal-lifecycle workflows covering policy expiry tracking, reminder scheduling and follow-up assignment across agent and admin roles.",
+        "Containerised services with Docker to keep local development and deployment environments consistent."
+      ],
+      "stack": ["Node.js", "React.js", "PostgreSQL", "Docker", "Redis", "LLM", "REST APIs"]
+    },
+    {
+      "role": "Software Developer",
+      "company": "StreamOn Technologies Pvt Ltd",
+      "location": "Mumbai",
+      "period": "Jul 2024 — Dec 2025",
+      "points": [
+        "Designed analytics-driven REST APIs that capture and process real-time engagement data, measuring audience participation during live virtual events.",
+        "Built interactive engagement features — quizzes, emoji reactions, polls and surveys — to help clients analyse interest and improve retention.",
+        "Developed a real-time chat and announcement feature for presenters, load-balanced to support up to 5,000 concurrent users.",
+        "Integrated the Agora SDK, extended live streaming with custom background features and tuned overall streaming performance."
+      ],
+      "stack": ["Laravel", "Node.js", "JavaScript", "AWS Lambda", "EC2", "S3"]
+    },
+    {
+      "role": "Freelance Developer",
+      "company": "Vendor Management CRM",
+      "location": "Freelance",
+      "period": "Apr 2024 — Jul 2024",
+      "points": [
+        "Built a CRM for vendor support operations with real-time complaint logging for systematic issue tracking.",
+        "Engineered multi-role access control for admins, supervisors and support staff that routed issues to the right department and improved accountability across the support lifecycle."
+      ],
+      "stack": ["Core PHP", "MySQL"]
+    },
+    {
+      "role": "Backend Developer",
+      "company": "ABC Designs",
+      "location": "Mumbai",
+      "period": "Aug 2022 — Mar 2024",
+      "points": [
+        "Built core modules of an online trading platform from scratch — deposit and withdrawal flows, market open/close operations and RESTful API integrations.",
+        "Developed a share-market web app for live gold and silver trading with market orders, limit orders, stop-loss and withdrawals.",
+        "Integrated an e-commerce module for buying physical gold and silver, combining trading and shopping in a single platform."
+      ],
+      "stack": ["Laravel", "JavaScript", "jQuery", "Razorpay"]
+    },
+    {
+      "role": "Junior Software Developer",
+      "company": "Vineet Marketing & Technology Pvt Ltd",
+      "location": "Mumbai",
+      "period": "Nov 2021 — Jul 2022",
+      "points": [
+        "Delivered two MLM web applications in Core PHP and MySQL, tailored to client-specific business logic and compensation models, and contributed to logistics and e-commerce projects.",
+        "Engineered the backend for a multi-tier commission and bonus engine — hierarchical level plan, admin tools for franchise assignment and automated calculations across all distribution levels."
+      ],
+      "stack": ["Core PHP", "JavaScript", "jQuery", "Razorpay"]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Master of Computer Applications",
+      "short": "MCA",
+      "school": "Late Bhausaheb Hiray College, University of Mumbai",
+      "period": "Sep 2020 — Jun 2022",
+      "cgpa": "8.82"
+    },
+    {
+      "degree": "Bachelor of Computer Applications",
+      "short": "BCA",
+      "school": "Tilak Maharashtra Vidyapeeth, Pune University",
+      "period": "Aug 2017 — Jul 2020",
+      "cgpa": "7.65"
+    }
+  ],
+  "certifications": [
+    { "title": "Getting Started with Docker", "issuer": "Simplilearn", "type": "Certificate", "url": "https://certificates.simplicdn.net/share/10158799_10429407_1777274986823.pdf" },
+    { "title": "GitHub Copilot Fundamentals", "issuer": "Simplilearn", "type": "Certificate", "url": "https://certificates.simplicdn.net/share/10150926_10429407_1777099166868.pdf" },
+    { "title": "Introduction to MongoDB", "issuer": "Simplilearn", "type": "Certificate", "url": "https://certificates.simplicdn.net/share/10426753_10429407_1783137163226.pdf" },
+    { "title": "Case Study on Illegal Multi-level Network Marketing Plans and Schemes", "issuer": "IJARSCT", "type": "Published research", "url": "https://www.ijarsct.co.in/Paper5430.pdf" }
+  ]
+}

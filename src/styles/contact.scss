@@ -1,61 +1,319 @@
-#contact {
-    min-height: 90vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.contact {
+    overflow: hidden;
 
-    > section {
-        background-color: $color1;
-        width: 100%;
-        height: 100%;
+    &__glow {
+        position: absolute;
+        left: 50%;
+        bottom: -40%;
+        width: min(1400px, 140vw);
+        aspect-ratio: 1;
+        transform: translateX(-50%);
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(255, 107, 61, 0.16), transparent 60%);
+        pointer-events: none;
+    }
 
-        > form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-            > h2 {
-                text-align: center;
-                font: 100 2.7rem $text2;
-                letter-spacing: 5px;
-                text-transform: uppercase;
-                margin: 2rem;
-            }
-            > input,button {
-                padding: 0.8rem;
-                width: 40%;
-                outline: none;
-                font: 400 0.9rem $text1;
-                margin: 1rem;
-                border: none;
-            }
+    .container {
+        position: relative;
+    }
 
-            > button {
-                cursor: pointer;
-                background-color: $color3;
-                color: $color4;
-                font: 600 1rem $text1;
-                text-transform: uppercase;
-                margin: 3rem;
-                &:hover{
-                    background-color: $color3_1;
-                }
+    &__title {
+        margin: 1.5rem 0 clamp(48px, 7vw, 110px);
+        // "something" is ~8.3em wide — never let it outgrow the container
+        font: 800 min(clamp(3rem, 1rem + 8.6vw, 11rem), calc((100vw - 2 * #{$gutter}) / 8.6))/0.88 $display;
+        letter-spacing: -0.055em;
+
+        .serif {
+            font-weight: 400;
+            color: $accent;
+            letter-spacing: -0.03em;
+        }
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+        gap: clamp(40px, 6vw, 120px);
+        align-items: start;
+    }
+
+    &__info {
+        display: grid;
+        gap: clamp(28px, 3vw, 44px);
+    }
+
+    &__block {
+        > .mono {
+            display: block;
+            color: $dim;
+            margin-bottom: 0.6rem;
+        }
+
+        p {
+            font-size: 1.05rem;
+        }
+    }
+
+    &__email-row {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+    }
+
+    &__email {
+        font: 700 clamp(1.2rem, 0.8rem + 1.5vw, 2.1rem)/1.1 $display;
+        letter-spacing: -0.03em;
+        word-break: break-all;
+        background: linear-gradient(currentColor, currentColor) 0 100% / 0% 1px no-repeat;
+        transition: background-size 0.6s $ease, color 0.3s;
+
+        @include fine {
+            &:hover {
+                color: $accent;
+                background-size: 100% 1px;
             }
         }
     }
 
-    > aside {
-        width: 100%;
-        height: 100%;
-        background-color: $color5;
+    &__copy {
+        flex-shrink: 0;
         display: grid;
         place-items: center;
-        img{
-            width: 70%;
-            height: 70%;
-            object-fit: contain;
-            filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.322)) hue-rotate(150deg);
-            animation: upupdowndown 0.7s infinite linear alternate;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        border: 1px solid $line-2;
+        color: $muted;
+        transition: color 0.3s, border-color 0.3s, transform 0.5s $ease;
+
+        &:hover {
+            color: $text;
+            border-color: $accent;
+            transform: rotate(-12deg);
         }
+    }
+
+    &__socials {
+        list-style: none;
+
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.95rem 0;
+            border-bottom: 1px solid $line;
+            font: 600 1.15rem/1 $display;
+            letter-spacing: -0.01em;
+            transition: color 0.3s, padding 0.5s $ease;
+
+            svg {
+                color: $dim;
+                transition: transform 0.5s $ease, color 0.3s;
+            }
+
+            @include fine {
+                &:hover {
+                    color: $accent;
+                    padding-left: 0.6rem;
+
+                    svg {
+                        color: $accent;
+                        transform: rotate(45deg);
+                    }
+                }
+            }
+        }
+
+        li:first-child a {
+            border-top: 1px solid $line;
+        }
+    }
+
+    // ── form card
+    &__form {
+        display: grid;
+        gap: 1.4rem;
+        padding: clamp(24px, 3.2vw, 52px);
+        border-radius: calc(#{$radius} + 6px);
+        border: 1px solid $line;
+        background: linear-gradient(160deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.015));
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        box-shadow: 0 40px 120px -40px rgba(0, 0, 0, 0.8);
+    }
+
+    &__form-head {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 0.6rem 1rem;
+        margin-bottom: 0.4rem;
+
+        h3 {
+            font: 700 clamp(1.6rem, 1.2rem + 1.2vw, 2.4rem)/1 $display;
+            letter-spacing: -0.035em;
+        }
+
+        .mono {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: $muted;
+            font-size: 0.68rem;
+
+            i {
+                width: 7px;
+                height: 7px;
+                border-radius: 50%;
+                background: #4ade80;
+                animation: pulse 2s infinite;
+            }
+        }
+    }
+
+    &__actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.8rem 1rem;
+        margin-top: 0.4rem;
+    }
+
+    &__or {
+        color: $dim;
+    }
+
+    &__submit {
+        --h: 58px;
+        padding-inline: 2rem;
+    }
+
+    &__wa-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        font: 700 clamp(1.1rem, 0.9rem + 0.8vw, 1.5rem)/1.1 $display;
+        letter-spacing: -0.02em;
+        transition: color 0.3s;
+
+        svg {
+            color: #25d366;
+            font-size: 1.2em;
+        }
+
+        &:hover {
+            color: #25d366;
+        }
+    }
+
+    @include md {
+        &__grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @include xs {
+        &__actions {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        &__or {
+            text-align: center;
+        }
+    }
+}
+
+// WhatsApp-green outline button
+.btn--whatsapp {
+    border-color: rgba(37, 211, 102, 0.55);
+    color: $text;
+
+    svg {
+        color: #25d366;
+        font-size: 1.15rem;
+    }
+
+    &::before {
+        background: #25d366;
+    }
+
+    @include fine {
+        &:hover {
+            color: #04210f;
+            border-color: #25d366;
+
+            svg {
+                color: #04210f;
+                transform: none;
+            }
+        }
+    }
+}
+
+// Floating-label input
+.field {
+    position: relative;
+
+    input,
+    textarea {
+        width: 100%;
+        padding: 1.5rem 0 0.7rem;
+        background: transparent;
+        border: 0;
+        border-bottom: 1px solid $line-2;
+        outline: none;
+        font-size: 1.05rem;
+        resize: none;
+        border-radius: 0;
+    }
+
+    textarea {
+        min-height: 120px;
+    }
+
+    label {
+        position: absolute;
+        left: 0;
+        top: 1.45rem;
+        color: $muted;
+        pointer-events: none;
+        transform-origin: left top;
+        transition: transform 0.45s $ease, color 0.3s;
+    }
+
+    &__line {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 1px;
+        background: $accent;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.6s $ease;
+    }
+
+    textarea ~ &__line {
+        bottom: 6px;
+    }
+
+    input:focus ~ label,
+    textarea:focus ~ label,
+    input:not(:placeholder-shown) ~ label,
+    textarea:not(:placeholder-shown) ~ label {
+        transform: translateY(-1.3rem) scale(0.78);
+        color: $accent;
+    }
+
+    input:focus ~ .field__line,
+    textarea:focus ~ .field__line {
+        transform: scaleX(1);
+    }
+
+    input:-webkit-autofill {
+        -webkit-text-fill-color: $text;
+        transition: background-color 9999s;
     }
 }

@@ -1,125 +1,394 @@
-#home{
-    width: 100%;
-    height: 90vh;
+.hero {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
     display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    isolation: isolate;
+    padding-top: clamp(96px, 13vh, 136px);
+    background:
+        radial-gradient(ellipse 70% 55% at 50% 105%, rgba(255, 107, 61, 0.22), transparent 70%),
+        radial-gradient(ellipse 50% 40% at 85% 10%, rgba(233, 201, 155, 0.06), transparent 70%),
+        $bg;
 
-    > section {
-        width: 100%;
-
-        &:first-of-type{
-            padding-left: $p;
-
-            > div {
-                border-top: 1px solid $color6_2;
-                height: 100%;
-                padding-top: 6rem;
-                > h1 {
-                    font: 900 4rem $text1;
-                }
-
-                .typewriterpara{
-                    margin: 20px 0;
-                    height: 20px;
-                    letter-spacing: 5px;
-                }
-
-                > div{
-                     display: flex;
-                     margin: 5rem 0;
-                     width: 70%;
-                     gap: 4rem;
-                     align-items: center;
-                     > a {
-                        &:first-of-type{
-                            background-color: $color3;
-                            color: $color1;
-                            padding: 1rem 2.5rem;
-                            transition: all 0.3s;
-                            &:hover {
-                                background-color: $color3_1;
-                            }
-                        }
-                        &:last-of-type{
-                            font: 600 1.2rem $text2;
-                            color: $color5;
-                            display: flex;
-                            align-items: center;
-                        }
-                     }
-                }
-
-                aside {
-                     display: flex;
-                     justify-content: space-between;
-                     width: 70%;
-                }
-
-                article {
-                    margin: 2rem 0;
-                    width: 10rem;
-                    color: $color5;
-                    position: relative;
-
-                    &::after{
-                        content: "";
-                        background-color: $color4;
-                        width: 100%;
-                        height: 5rem;
-                        border-radius: 50px;
-                        position: absolute;
-                        top: 20%;
-                        left: 20%;
-                        z-index: -1;
-                    }
-                    > p {
-                        font: 900 2rem $text2;
-                    }
-                    > span {
-                        font: 500 1rem $text2;
-                    }
-                }
-
-                article[data-special]{
-                    width: 16rem;
-                }
-            }
-        }
-
-        &:last-of-type{
-            border-top: 1px solid $color6_2;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            align-items: center;
-            overflow-x: hidden;
-
-            &::after{
-                content: "";
-                width: 40vmax;
-                height: 40vmax;
-                background-color: $color3;
-                position: absolute;
-                z-index: -1;
-                border-radius: 50%;
-            }
-
-            > img {
-                width: 40vmax;
-                height: 40vmax;
-                object-fit: cover;
-            } 
-        }
-        
-    }
-
-    > svg {
+    &__glow {
         position: absolute;
-        font-size: 4rem;
-        color: $color5;
-        left: 50%;
-        bottom: 5%;
-        transform: translateX(-50%);
-        animation: animateSvg 0.7s infinite linear alternate;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
     }
 
+    &__grid {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        background-image:
+            linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+        background-size: clamp(56px, 7vw, 110px) clamp(56px, 7vw, 110px);
+        background-position: center top;
+        mask-image: radial-gradient(ellipse 75% 65% at 50% 40%, #000 25%, transparent 78%);
+        -webkit-mask-image: radial-gradient(ellipse 75% 65% at 50% 40%, #000 25%, transparent 78%);
+    }
+
+    &__inner {
+        position: relative;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    // ── meta row
+    &__meta {
+        position: relative;
+        z-index: 3;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0.6rem 1.5rem;
+        color: $muted;
+    }
+
+    &__status {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        color: $text;
+
+        i {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #4ade80;
+            animation: pulse 2s infinite;
+        }
+    }
+
+    // ── giant name
+    &__title {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        margin-top: clamp(0.75rem, 3vh, 2.25rem);
+        font-family: $display;
+        font-weight: 800;
+        // "PRIYESH" is ~6.8em wide in Syne 800 — size it to the container so it always fits
+        font-size: min(calc((100vw - 2 * #{$gutter}) / 7.15), 224px);
+        line-height: 0.8;
+        letter-spacing: -0.055em;
+        text-transform: uppercase;
+        user-select: none;
+        pointer-events: none;
+    }
+
+    &__line {
+        display: block;
+        white-space: nowrap;
+
+        .word-mask {
+            padding-bottom: 0.04em;
+            margin-bottom: -0.04em;
+        }
+
+        &--outline {
+            align-self: flex-end;
+            color: transparent;
+            -webkit-text-stroke: 1.5px rgba(239, 235, 228, 0.5);
+        }
+    }
+
+    // ── portrait
+    &__portrait {
+        position: absolute;
+        z-index: 2;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin-inline: auto;
+        width: clamp(300px, 34vw, 620px);
+        pointer-events: none;
+
+        &::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            left: 50%;
+            top: 18%;
+            width: 115%;
+            aspect-ratio: 1;
+            transform: translateX(-50%);
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 107, 61, 0.38) 0%, rgba(255, 107, 61, 0.08) 45%, transparent 68%);
+            filter: blur(10px);
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: -10%;
+            right: -10%;
+            bottom: 0;
+            height: 30%;
+            background: linear-gradient(to top, $bg 6%, rgba(7, 7, 10, 0));
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            filter: contrast(1.04) saturate(0.95) drop-shadow(0 30px 60px rgba(0, 0, 0, 0.55));
+            // soften the photo's cropped shoulder edges
+            -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 16%, #000 84%, transparent 100%);
+            mask-image: linear-gradient(90deg, transparent 0%, #000 16%, #000 84%, transparent 100%);
+        }
+    }
+
+    // ── bottom row
+    &__bottom {
+        position: relative;
+        z-index: 3;
+        margin-top: auto;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        align-items: end;
+        gap: 2rem;
+        padding-block: 2rem clamp(28px, 5vh, 60px);
+    }
+
+    &__intro {
+        max-width: 400px;
+    }
+
+    &__hello {
+        color: $muted;
+        font-size: 1rem;
+    }
+
+    &__role {
+        min-height: 1.15em;
+        margin: 0.2rem 0 0.9rem;
+        font-family: $serif;
+        font-style: italic;
+        font-size: clamp(2rem, 1.3rem + 1.6vw, 3.2rem);
+        white-space: nowrap;
+        line-height: 1.1;
+        color: $gold;
+
+        .typewriter-cursor {
+            color: $accent;
+            font-style: normal;
+            font-weight: 300;
+        }
+    }
+
+    &__blurb {
+        color: $muted;
+        max-width: 34ch;
+        margin-bottom: 1.6rem;
+    }
+
+    &__ctas {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+    &__stats {
+        justify-self: end;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.6rem;
+        width: min(100%, 320px);
+    }
+
+    &__scroll {
+        position: absolute;
+        z-index: 3;
+        right: 0;
+        top: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+        writing-mode: vertical-rl;
+        color: $muted;
+        transition: color 0.3s;
+
+        svg {
+            writing-mode: horizontal-tb;
+        }
+
+        &:hover {
+            color: $text;
+        }
+    }
+
+    &__scroll-line {
+        width: 1px;
+        height: 56px;
+        background: $text;
+        animation: scrollLine 2.4s $ease-io infinite;
+    }
+}
+
+.stat {
+    position: relative;
+    display: block;
+    padding: 1rem 1.2rem;
+    border-radius: 18px;
+    border: 1px solid $line;
+    background: rgba(17, 17, 22, 0.55);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    transition: border-color 0.4s $ease, transform 0.6s $ease, background-color 0.4s;
+
+    p {
+        font: 700 clamp(1.7rem, 1.2rem + 1.2vw, 2.4rem)/1 $display;
+        letter-spacing: -0.04em;
+    }
+
+    > span {
+        display: block;
+        margin-top: 0.35rem;
+        color: $muted;
+        font-size: 0.82rem;
+    }
+
+    &--contact {
+        grid-column: 1 / -1;
+
+        p {
+            font-size: 1.1rem;
+            letter-spacing: -0.01em;
+            color: $accent;
+        }
+
+        span {
+            color: $text;
+            word-break: break-all;
+        }
+
+        svg {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            color: $accent;
+            transition: transform 0.5s $ease;
+        }
+    }
+
+    @include fine {
+        &:hover {
+            border-color: $line-2;
+            transform: translateY(-3px);
+            background: rgba(23, 23, 30, 0.7);
+        }
+
+        &--contact:hover svg {
+            transform: rotate(45deg);
+        }
+    }
+}
+
+// ─── Responsive ────────────────────────────────────────────
+@include lg {
+    .hero__portrait {
+        width: clamp(300px, 32vw, 500px);
+    }
+
+    .hero__intro {
+        max-width: 400px;
+    }
+
+    .hero__stats {
+        width: min(100%, 290px);
+    }
+}
+
+// Short laptop screens — keep everything above the fold
+@media (min-width: 1025px) and (max-height: 820px) {
+    .hero__title {
+        font-size: min(calc((100vw - 2 * #{$gutter}) / 8), 19vh);
+    }
+
+    .hero__portrait {
+        width: min(32vw, 62vh);
+    }
+
+    .hero__blurb {
+        display: none;
+    }
+}
+
+@include md {
+    .hero {
+        min-height: auto;
+        padding-top: clamp(92px, 14vw, 120px);
+    }
+
+    .hero__title {
+        margin-top: 1.5rem;
+    }
+
+    .hero__portrait {
+        position: relative;
+        width: min(80vw, 480px, 52vh);
+        margin-top: -6vw;
+    }
+
+    .hero__bottom {
+        grid-template-columns: 1fr 1fr;
+        margin-top: -6vw;
+        padding-top: 0;
+        align-items: start;
+    }
+
+    .hero__scroll {
+        display: none;
+    }
+}
+
+@include sm {
+    .hero__line--outline {
+        -webkit-text-stroke-width: 1px;
+    }
+
+    .hero__portrait {
+        width: min(92vw, 400px, 50vh);
+        margin-top: -7vw;
+    }
+
+    .hero__bottom {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+    }
+
+    .hero__intro {
+        max-width: 100%;
+    }
+
+    .hero__stats {
+        justify-self: stretch;
+        width: 100%;
+    }
+}
+
+@include xs {
+    .hero__meta {
+        font-size: 0.65rem;
+    }
+
+    .hero__role {
+        white-space: normal;
+    }
+
+    .hero__ctas .btn {
+        flex: 1 1 auto;
+    }
+
+    .stat {
+        padding: 0.9rem 1rem;
+    }
 }

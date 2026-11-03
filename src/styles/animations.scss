@@ -1,17 +1,24 @@
-@keyframes animateSvg {
-    to {
-        transform: translate(-50%,-10px);
-    }
+@keyframes marquee {
+    to { transform: translate3d(-50%, 0, 0); }
 }
 
-@keyframes upanddown {
-    to {
-        transform: translateY(-5px);
-    }
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.55); }
+    70% { box-shadow: 0 0 0 10px rgba(74, 222, 128, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
 }
 
-@keyframes upupdowndown {
-    to {
-        transform: translateY(-10px);
-    }
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes scrollLine {
+    0% { transform: scaleY(0); transform-origin: top; }
+    45% { transform: scaleY(1); transform-origin: top; }
+    55% { transform: scaleY(1); transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+@keyframes floatY {
+    50% { transform: translateY(-10px); }
 }
